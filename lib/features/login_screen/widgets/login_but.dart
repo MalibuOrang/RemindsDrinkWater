@@ -15,23 +15,24 @@ class GoogleLoginBut extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-        padding: const EdgeInsets.only(top: 10),
-        child: Container(
-          padding: const EdgeInsets.all(5),
-          decoration: BoxDecoration(
-              border: Border.all(color: Colors.white),
-              borderRadius: BorderRadius.circular(16),
-              color: Colors.grey[200]),
-          child: IconButton(
-            onPressed: () async {
-              controller.onPressLoginBut(context, theme, flutterToastView);
-            },
-            icon: Image.asset(
-              googleSing,
-              height: 80,
-              width: 80,
-            ),
+      padding: const EdgeInsets.only(top: 10),
+      child: Container(
+        padding: const EdgeInsets.all(5),
+        decoration: BoxDecoration(
+            border: Border.all(color: Colors.white),
+            borderRadius: BorderRadius.circular(16),
+            color: Colors.grey[200]),
+        child: IconButton(
+          onPressed: () async {
+            controller.onPressLoginBut(context, theme, flutterToastView);
+          },
+          icon: Image.asset(
+            googleSing,
+            height: 80,
+            width: 80,
           ),
-        ));
+        ),
+      ),
+    );
   }
 }

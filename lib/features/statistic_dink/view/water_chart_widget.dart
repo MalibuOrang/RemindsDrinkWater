@@ -44,42 +44,47 @@ class WaterChartWeek extends StatelessWidget {
                   width: MediaQuery.of(context).size.width,
                   child: BarChart(
                     BarChartData(
-                        maxY: 2500,
-                        gridData: const FlGridData(show: false),
-                        borderData: FlBorderData(show: false),
-                        titlesData: const FlTitlesData(
-                          show: true,
-                          topTitles: AxisTitles(
-                            sideTitles: SideTitles(
-                                showTitles: true, getTitlesWidget: getTopTitle),
-                          ),
-                          leftTitles: AxisTitles(
-                            sideTitles: SideTitles(showTitles: false),
-                          ),
-                          rightTitles: AxisTitles(
-                            sideTitles: SideTitles(showTitles: false),
-                          ),
-                          bottomTitles: AxisTitles(
-                            sideTitles: SideTitles(
-                                showTitles: true,
-                                getTitlesWidget: getBottomTitle),
-                          ),
+                      maxY: 2500,
+                      gridData: const FlGridData(show: false),
+                      borderData: FlBorderData(show: false),
+                      titlesData: const FlTitlesData(
+                        show: true,
+                        topTitles: AxisTitles(
+                          sideTitles: SideTitles(
+                              showTitles: true, getTitlesWidget: getTopTitle),
                         ),
-                        barGroups: waterDiagramData.diagramData
-                            .map((data) =>
-                                BarChartGroupData(x: data.x, barRods: [
-                                  BarChartRodData(
-                                    toY: data.y,
-                                    color: Colors.blue[300],
-                                    width: 25,
-                                    borderRadius: BorderRadius.circular(4),
-                                    backDrawRodData: BackgroundBarChartRodData(
-                                        show: true,
-                                        toY: 2500,
-                                        color: Colors.grey[200]),
-                                  )
-                                ]))
-                            .toList()),
+                        leftTitles: AxisTitles(
+                          sideTitles: SideTitles(showTitles: false),
+                        ),
+                        rightTitles: AxisTitles(
+                          sideTitles: SideTitles(showTitles: false),
+                        ),
+                        bottomTitles: AxisTitles(
+                          sideTitles: SideTitles(
+                              showTitles: true,
+                              getTitlesWidget: getBottomTitle),
+                        ),
+                      ),
+                      barGroups: waterDiagramData.diagramData
+                          .map(
+                            (data) => BarChartGroupData(
+                              x: data.x,
+                              barRods: [
+                                BarChartRodData(
+                                  toY: data.y,
+                                  color: Colors.blue[300],
+                                  width: 25,
+                                  borderRadius: BorderRadius.circular(4),
+                                  backDrawRodData: BackgroundBarChartRodData(
+                                      show: true,
+                                      toY: 2500,
+                                      color: Colors.grey[200]),
+                                )
+                              ],
+                            ),
+                          )
+                          .toList(),
+                    ),
                   ),
                 ),
                 const SizedBox(

@@ -32,8 +32,9 @@ showInputDialog(BuildContext context) {
           Center(
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
-                  backgroundColor: theme.cardColor,
-                  fixedSize: const Size(200, 50)),
+                backgroundColor: theme.cardColor,
+                fixedSize: const Size(200, 50),
+              ),
               child:
                   Text(S.of(context).submit, style: theme.textTheme.bodyMedium),
               onPressed: () async {

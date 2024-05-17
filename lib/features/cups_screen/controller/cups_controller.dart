@@ -19,10 +19,12 @@ class CupsController extends GetxController {
 
     DocumentReference chartsDocRef =
         firestore.collection(chartsCollection).doc(currentUser!.uid);
-    await chartsDocRef.collection(chartsDataCollection).add(WaterDaysModel(
-          amount: double.parse(cupsMl.value),
-          userId: currentUser!.uid,
-          timestamp: DateTime.now(),
-        ).toJson());
+    await chartsDocRef.collection(chartsDataCollection).add(
+          WaterDaysModel(
+            amount: double.parse(cupsMl.value),
+            userId: currentUser!.uid,
+            timestamp: DateTime.now(),
+          ).toJson(),
+        );
   }
 }

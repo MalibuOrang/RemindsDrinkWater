@@ -21,54 +21,55 @@ class _StreamStatisticState extends State<StreamStatistic> {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return StreamBuilder(
-        stream: widget.controller.getUserInfo(userCollection, currentUser!.uid),
-        builder: (context, AsyncSnapshot<List<UsersModel>> snapshot) {
-          if (!snapshot.hasData) {
-            return loadingIndicator(color: theme.colorScheme.background);
-          } else {
-            List<UsersModel>? data = snapshot.data;
-            return Padding(
-              padding: const EdgeInsets.only(top: 10),
-              child: Center(
-                child: SleekCircularSlider(
-                  min: 0,
-                  max: 100,
-                  initialValue: widget.controller.calculatePercent(
-                      data!.first.waterPerDay, widget.snapshot),
-                  appearance: CircularSliderAppearance(
-                    customWidths: CustomSliderWidths(
-                      handlerSize: 0,
-                      trackWidth: 15,
-                      progressBarWidth: 15,
+      stream: widget.controller.getUserInfo(userCollection, currentUser!.uid),
+      builder: (context, AsyncSnapshot<List<UsersModel>> snapshot) {
+        if (!snapshot.hasData) {
+          return loadingIndicator(color: theme.colorScheme.background);
+        } else {
+          List<UsersModel>? data = snapshot.data;
+          return Padding(
+            padding: const EdgeInsets.only(top: 10),
+            child: Center(
+              child: SleekCircularSlider(
+                min: 0,
+                max: 100,
+                initialValue: widget.controller
+                    .calculatePercent(data!.first.waterPerDay, widget.snapshot),
+                appearance: CircularSliderAppearance(
+                  customWidths: CustomSliderWidths(
+                    handlerSize: 0,
+                    trackWidth: 15,
+                    progressBarWidth: 15,
+                  ),
+                  infoProperties: InfoProperties(
+                    bottomLabelText:
+                        "${widget.controller.calculateSum(widget.snapshot)}/${data.first.waterPerDay} ml",
+                    bottomLabelStyle: const TextStyle(
+                      letterSpacing: 0.1,
+                      fontSize: 20,
+                      height: 1.5,
                     ),
-                    infoProperties: InfoProperties(
-                      bottomLabelText:
-                          "${widget.controller.calculateSum(widget.snapshot)}/${data.first.waterPerDay} ml",
-                      bottomLabelStyle: const TextStyle(
-                        letterSpacing: 0.1,
-                        fontSize: 20,
-                        height: 1.5,
-                      ),
-                      mainLabelStyle: TextStyle(
-                        color: theme.colorScheme.background,
-                        fontSize: 24,
-                      ),
+                    mainLabelStyle: TextStyle(
+                      color: theme.colorScheme.background,
+                      fontSize: 24,
                     ),
-                    animationEnabled: true,
-                    size: 220,
-                    customColors: CustomSliderColors(
-                      trackColor: theme.dividerColor,
-                      hideShadow: true,
-                      progressBarColors: [
-                        theme.colorScheme.background,
-                        theme.cardColor
-                      ],
-                    ),
+                  ),
+                  animationEnabled: true,
+                  size: 220,
+                  customColors: CustomSliderColors(
+                    trackColor: theme.dividerColor,
+                    hideShadow: true,
+                    progressBarColors: [
+                      theme.colorScheme.background,
+                      theme.cardColor
+                    ],
                   ),
                 ),
               ),
-            );
-          }
-        });
+            ),
+          );
+        }
+      },
+    );
   }
 }

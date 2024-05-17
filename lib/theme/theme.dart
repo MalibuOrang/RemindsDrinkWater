@@ -19,16 +19,17 @@ final lightTheme = ThemeData(
   listTileTheme: const ListTileThemeData(iconColor: Colors.white),
   useMaterial3: true,
   textTheme: TextTheme(
-      bodyMedium: const TextStyle(
-        color: Colors.white,
-        fontWeight: FontWeight.w500,
-        fontSize: 20,
-      ),
-      labelSmall: TextStyle(
-        color: Colors.white.withOpacity(0.6),
-        fontWeight: FontWeight.w700,
-        fontSize: 18,
-      )),
+    bodyMedium: const TextStyle(
+      color: Colors.white,
+      fontWeight: FontWeight.w500,
+      fontSize: 20,
+    ),
+    labelSmall: TextStyle(
+      color: Colors.white.withOpacity(0.6),
+      fontWeight: FontWeight.w700,
+      fontSize: 18,
+    ),
+  ),
   colorScheme: ColorScheme.fromSwatch(
       primarySwatch: Colors.red,
       backgroundColor: Colors.lightBlue,
