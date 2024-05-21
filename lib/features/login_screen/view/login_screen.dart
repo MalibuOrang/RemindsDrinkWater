@@ -27,6 +27,7 @@ class _LoginWithGoogleState extends State<LoginWithGoogle> {
     var showToast = FlutterToastView();
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: Text(
           S.of(context).remindDrinksWater,
           style: theme.textTheme.bodyMedium,

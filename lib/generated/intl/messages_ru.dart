@@ -28,8 +28,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "addCupsOfWater":
             MessageLookupByLibrary.simpleMessage("Добавить стаканы воды"),
         "addWater": MessageLookupByLibrary.simpleMessage("Добавить воду"),
-        "appName":
-            MessageLookupByLibrary.simpleMessage("Напоминание о питье воды"),
+        "appName": MessageLookupByLibrary.simpleMessage("Напоминанить попить"),
         "averageWaterDrunks": MessageLookupByLibrary.simpleMessage(
             "Среднее количество выпитой воды:"),
         "chartsOfWeek": MessageLookupByLibrary.simpleMessage("График недели"),
@@ -66,8 +65,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "textErrorDrinkWater":
             MessageLookupByLibrary.simpleMessage("У вас есть ошибки!"),
         "timeline": MessageLookupByLibrary.simpleMessage("Хронология"),
-        "welcome": MessageLookupByLibrary.simpleMessage(
-            "Добро пожаловать, вас не хватало!"),
+        "welcome": MessageLookupByLibrary.simpleMessage("Добро пожаловать!"),
         "welcomeBackYouveBeenMissed": MessageLookupByLibrary.simpleMessage(
             "С возвращением, вас не хватало!"),
         "youDinkedValueml": m0,
